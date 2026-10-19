@@ -1,0 +1,211 @@
+{
+  "id": "before-project",
+  "title": "Before The Project",
+  "tasks": [
+    {
+      "id": "before-proposal-feedback",
+      "title": "Proposal Feedback",
+      "description": "",
+      "sections": [
+        {
+          "title": "Comments From Your Proposal Review",
+          "fields": [
+            { "id": "review-comments", "label": "What suggestions were offered by the council or district representative who approved your project?", "type": "textarea", "required": true, "value": "" }
+          ]
+        },
+        {
+          "title": "Project Description and Benefit - Changes from the Proposal",
+          "hint": "As projects are planned, changes are usually necessary. If they are major, it is important to confirm they are acceptable to the beneficiary. You should also discuss major changes with those who approved your proposal, and also with your coach, to get an idea if the changes will be acceptable to your board of review.",
+          "fields": [
+            { "id": "changes", "label": "How will your project be different from your approved proposal?", "type": "textarea", "required": true, "value": "" },
+            { "id": "changes-helpful", "label": "Will the changes make the project more, or less, helpful to the beneficiary?", "type": "textarea", "required": true, "value": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "before-work-worksite-permits",
+      "title": "Work, Worksite, & Permits",
+      "description": "",
+      "sections": [
+        {
+          "title": "Present Condition or Situation",
+          "fields": [
+            { "id": "present-condition", "label": "Describe the present condition of the worksite. For an event or activity, describe your biggest obstacles.", "type": "textarea", "required": true, "value": "" },
+            { "id": "before-photos", "label": "Click to include your before worksite photo(s)", "type": "image", "required": true, "value": [] }
+          ]
+        },
+        {
+          "title": "Work Process",
+          "fields": [
+            { "id": "work-process", "label": "Prepare a step-by-step list of what must be done and how everything comes together: site preparation, sizing, assembly, fastening of materials, finishes to be used (paint, varnish, etc.), uses of supplies and tools, etc. Your project coach may be able to assist.", "type": "textarea", "required": true, "value": "" }
+          ]
+        },
+        {
+          "title": "Permits and Permissions",
+          "fields": [
+            { "id": "permits", "label": "If you will need permissions or permits*, what is being done to obtain them, and when will they be issued?", "type": "textarea", "required": true,
+              "hint": "* Could include building or electrical permits, dig permits, event permits, permission to access property, wilderness or back country permits, etc.", "value": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "before-supplies-expenses-revenue",
+      "title": "Supplies, Expenses, and Revenue",
+      "description": "",
+      "sections": [
+        {
+          "title": "Materials",
+          "fields": [
+            { "id": "materials-table", "label": "List each item, description, quantity, unit cost, total cost, and source. For donated items show value in cost columns. See example.", "type": "table", "required": true,
+              "columns": ["Item", "Description", "Quantity", "Unit Cost", "Total Cost", "Source"],
+              "example": ["Plywood", "3/4\", 4'x8', B-C interior grade", "3", "20.00", "60.00", "ABC Hardware Donation"],
+              "rowCount": 9, "totalColumn": "Total Cost", "totalLabel": "Total cost of materials", "value": [] }
+          ]
+        },
+        {
+          "title": "Supplies",
+          "fields": [
+            { "id": "supplies-table", "label": "List each item, description, quantity, unit cost, total cost, and source. For donated items show value in cost columns. See example.", "type": "table", "required": true,
+              "columns": ["Item", "Description", "Quantity", "Unit Cost", "Total Cost", "Source"],
+              "example": ["Plastic tarp", "9' x 12', 2mil thick", "2", "4.00", "8.00", "ABC Hardware"],
+              "rowCount": 9, "totalColumn": "Total Cost", "totalLabel": "Total cost of supplies", "value": [] }
+          ]
+        },
+        {
+          "title": "Tools",
+          "fields": [
+            { "id": "tools-table", "label": "List tools and equipment that must be purchased or rented; with quantity, unit cost, total cost, source, and who will operate or use it. See example.", "type": "table", "required": true,
+              "columns": ["Tool", "Quantity", "Unit Cost", "Total Cost", "Source", "Who will operate/use"],
+              "example": ["Circular power saw", "1", "0.00", "0.00", "Mr. Smith", "Mr. Smith"],
+              "rowCount": 9, "totalColumn": "Total Cost", "totalLabel": "Total cost of tools", "value": [] }
+          ]
+        },
+        {
+          "title": "Other Needs",
+          "fields": [
+            { "id": "other-table", "label": "List each item, description, quantity, unit cost, total cost, and source. For donated items show value in cost columns. See example.", "type": "table", "required": false,
+              "columns": ["Item", "Description", "Quantity", "Unit Cost", "Total Cost", "Source"],
+              "example": ["Printing", "Marketing brochure", "2000", "0.01", "20.00", "ABC Hardware"],
+              "rowCount": 9, "totalColumn": "Total Cost", "totalLabel": "Total cost of other needs", "value": [] }
+          ]
+        },
+        {
+          "title": "Expenses",
+          "fields": [
+            { "id": "expenses-summary", "label": "Expenses", "type": "summary", "required": false,
+              "lines": [
+                { "label": "Total materials (from above)", "sumOf": "materials-table" },
+                { "label": "Total supplies (from above)", "sumOf": "supplies-table" },
+                { "label": "Total tools (from above)", "sumOf": "tools-table" },
+                { "label": "Total other (from above)", "sumOf": "other-table" }
+              ],
+              "totalLabel": "Total cost" }
+          ]
+        },
+        {
+          "title": "Revenue",
+          "fields": [
+            { "id": "total-to-raise", "label": "Total to be raised", "type": "number", "required": true, "value": "" },
+            { "id": "beneficiary-contribution", "label": "Contribution from beneficiary", "type": "number", "required": true, "value": "" },
+            { "id": "revenue-plan", "label": "Describe how you will get the money for your project. Include what any helpers will do to assist with the effort and also any requests you will make for donations of supplies, materials, etc.", "type": "textarea", "required": true, "value": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "before-giving-leadership",
+      "title": "Giving Leadership",
+      "description": "",
+      "sections": [
+        {
+          "title": "",
+          "fields": [
+            { "id": "jobs-table", "label": "Fill out the chart below, telling about specific jobs that need to be done, the skills needed to do them, whether they must be adults or may be youth, how many helpers are needed, and how many you have so far if any. For example:", "type": "table", "required": true,
+              "columns": ["Job to Be Done", "Skill Needed (if any)", "Adult or Youth", "Helpers Needed", "Helpers So Far"],
+              "example": ["Work at car wash", "Able to drive or wash cars", "Adult drivers/supervisors, youth to wash", "2 adults, 10 youth", "1 Adult, 5 youth"],
+              "rowCount": 10, "value": [] },
+            { "id": "briefing-plan", "label": "What are your plans for briefing helpers, or making sure they know how to do what you want them to do?", "type": "textarea", "required": true, "value": "" },
+            { "id": "communication-plan", "label": "What is your plan for communicating with your workers to make sure they know how to get to the site and where to park, that they will be on time and they will have with them what they need?", "type": "textarea", "required": true, "value": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "before-logistics",
+      "title": "Logistics",
+      "description": "",
+      "sections": [
+        {
+          "title": "",
+          "fields": [
+            { "id": "worker-travel", "label": "How will the workers get to and from the place where the work will be done?", "type": "textarea", "required": true, "value": "" },
+            { "id": "transport-materials", "label": "How will you transport materials, supplies, and tools to and from the site?", "type": "textarea", "required": true, "value": "" },
+            { "id": "tool-condition", "label": "How will you assure the tools used are in good condition, that clearance and barriers needed between users are considered, and that the tools are properly used and stored?", "type": "textarea", "required": true, "value": "" },
+            { "id": "work-hours", "label": "How long will your helpers be working each day? (Recommend no more than eight hours per day)", "type": "text", "required": true, "value": "" },
+            { "id": "food", "label": "How will the workers be fed?", "type": "text", "required": true, "value": "" },
+            { "id": "restrooms", "label": "Where are the restrooms located?", "type": "text", "required": true, "value": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "before-safety-issues",
+      "title": "Safety Issues",
+      "description": "",
+      "sections": [
+        {
+          "title": "",
+          "fields": [
+            { "id": "first-aid-kit", "label": "Will a first aid kit be needed for this project? If so, where will it be kept?", "type": "text", "required": true, "value": "" },
+            { "id": "hazardous-materials", "label": "Will any hazardous materials or chemicals be used? If so, how will you see that they are properly handled?", "type": "textarea", "required": true, "value": "" },
+            { "id": "hazards-table", "label": "List hazards you might face. These could include severe weather, wildlife, hazardous tools or equipment, overhead or underground utilities, sunburn, etc. What will you do to prevent problems? For example, \"Hazardous tools will be operated by adults only.\"", "type": "table", "required": true,
+              "columns": ["Potential Hazard", "What will you do to prevent problems?"],
+              "rowCount": 5, "value": [] },
+            { "id": "safety-communication", "label": "How do you plan to communicate these safety issues and hazards to your helpers?", "type": "textarea", "required": true, "value": "" },
+            { "id": "protective-equipment", "label": "What personal protective equipment or supplies may be needed? For example, gloves, goggles, hardhats, etc.", "type": "textarea", "required": true, "value": "" },
+            { "id": "briefing-when", "label": "When will you hold a safety briefing?", "type": "text", "required": true, "value": "" },
+            { "id": "briefing-who", "label": "Who will conduct it?", "type": "text", "required": true, "value": "" },
+            { "id": "first-aid-specialist", "label": "Who will be your first-aid specialist?", "type": "text", "required": true, "value": "" },
+            { "id": "emergency-access", "label": "How may emergency vehicles access the site?", "type": "text", "required": true, "value": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "before-coach-contingency",
+      "title": "Project Coach Comments/Contingency",
+      "description": "",
+      "sections": [
+        {
+          "title": "Comments From Your Project Coach About Your Project Plan",
+          "hint": "Project coach comments can be extremely helpful in assuring your project is successful.",
+          "fields": [
+            { "id": "coach-comments", "label": "Comments From Your Project Coach About Your Project Plan", "type": "textarea", "required": true, "value": "" }
+          ]
+        },
+        {
+          "title": "Contingency",
+          "fields": [
+            { "id": "contingency", "label": "What would cause postponement or cancellation of the project? What will you do should this happen?", "type": "textarea", "required": true, "value": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "before-fundraising-application",
+      "title": "Fundraising Application - RESOURCE",
+      "description": "A resource for Scouts who want help with fundraising.",
+      "tracked": false,
+      "sections": [
+        {
+          "title": "",
+          "fields": [
+            { "id": "fundraising-resource", "label": "Fundraising Application", "type": "resource", "required": false, "url": "" }
+          ]
+        }
+      ]
+    }
+  ]
+}
