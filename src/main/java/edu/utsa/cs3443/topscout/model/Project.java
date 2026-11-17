@@ -12,18 +12,62 @@ public class Project {
     private String templateId;
     private int schemaVersion;
     private String createdDate;
-    ArrayList<ProjectStage> stages;
+    private ArrayList<ProjectStage> stages;
 
     public Project(String title){
-
+        this.id = title;
+        this.title = title;
+        this.stages = new ArrayList<>();
     }
-    public ProjectStage getStage(String stageId){}
-    public int getTrackedTaskCount(){}
-    public int getCompletedTaskCount(){}
-    public int getProgressPercent(){}
+    
 
-    @Override
-    public String toString(){}
 
+
+
+    public void addStage(ProjectStage stage) {
+        stages.add(stage);
+    }
+
+    // Getters and setters
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
+    }   
+    public String getTitle() {
+        return title;
+    }
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    public String getTemplateId() {
+        return templateId;
+    }
+    public void setTemplateId(String templateId) {
+        this.templateId = templateId;
+    }
+    public int getSchemaVersion() {
+        return schemaVersion;
+    }
+    public void setSchemaVersion(int schemaVersion) {
+        this.schemaVersion = schemaVersion;
+    }
+    public String getCreatedDate() {
+        return createdDate;
+    }
+    public void setCreatedDate(String createdDate) {
+        this.createdDate = createdDate;
+    }
+    public String toString() {
+        return "Project{" +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
+                ", templateId='" + templateId + '\'' +
+                ", schemaVersion=" + schemaVersion +
+                ", createdDate='" + createdDate + '\'' +
+                ", stages=" + stages +
+                '}';
+    }
 
 }
