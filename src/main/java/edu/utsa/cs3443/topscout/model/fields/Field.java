@@ -64,7 +64,7 @@ public class Field {
     public boolean isCompleted() {
         return completed;
     }
-    public void setCompleted(boolean completed) {
+    public  setCompleted(boolean completed) {
         this.completed = completed;
     }
 
