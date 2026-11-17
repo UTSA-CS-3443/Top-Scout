@@ -1,5 +1,5 @@
 package edu.utsa.cs3443.topscout.model;
-import edu.utsa.cs3443.topscout.model.fields.*;
+import edu.utsa.cs3443.topscout.model.fields.Field;
 import java.util.ArrayList;
 
 /**
@@ -29,7 +29,11 @@ public class Section {
         }
         return null;
     }
-   
+
+
+    public ArrayList<Field> getFields() {
+        return fields;
+    }
     public String getTitle() {
         return title;
     }
