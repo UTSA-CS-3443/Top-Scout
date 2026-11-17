@@ -1,11 +1,12 @@
 package edu.utsa.cs3443.topscout.model;
+import edu.utsa.cs3443.topscout.model.fields.Field;
 import java.util.ArrayList;
 
 /**
  * One checklist item, which is one screen in the app. Holds its sections and can tell whether it is complete.
  */
 public class Task {
-    // TODO: add the attributes and methods from the UML design
+    
     String id;
     String title;
     String description;
@@ -31,10 +32,65 @@ public class Task {
         }
         return null;
     }
+    public Field getField(String id) {
+        for (Section section : sections) {
+            Field field = section.getField(id);
+            if (field != null) {
+                return field;
+            }
+        }
+        return null;
+    }
+    public boolean isComplete() {
+        for (Section section : sections) {
+            for (Field field : section.getFields()) {
+                if (field.isRequired() && !field.isCompleted()) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    public int getCopletionPercentage() {
+        int totalFields = 0;
+        int completedFields = 0;
+
+        for (Section section : sections) {
+            for (Field field : section.getFields()) {
+                totalFields++;
+                if (field.isCompleted()) {
+                    completedFields++;
+                }
+            }
+        }
+
+        if (totalFields == 0) {
+            return 100; // If there are no fields, consider it complete
+        }
+
+        return (int) Math.round((double) (completedFields * 100) / totalFields); // I added a cast to double to ensure proper division and rounding
+    }
 
 
+    public ArrayList<Field> getAllFields() {
+        ArrayList<Field> allFields = new ArrayList<>();
+        for (Section section : sections) {
+            allFields.addAll(section.getFields());
+        }
+        return allFields;
+    }
 
 
+    @Override 
+    public String toString() {
+        return "Task{" +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", tracked=" + tracked +
+                ", sections=" + sections +
+                '}';
+    }
     public String getId() {
         return id;
     }
