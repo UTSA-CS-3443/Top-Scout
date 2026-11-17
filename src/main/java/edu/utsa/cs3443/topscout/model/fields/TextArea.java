@@ -3,8 +3,8 @@ package edu.utsa.cs3443.topscout.model.fields;
 public class TextArea extends Field {
     private String value;
 
-    public TextArea(String id, String label, String hint, boolean required, String value) {
-        super(id, label, hint, required);
+    public TextArea(String id, String label, String hint, boolean required, String value, boolean completed) {
+        super(id, label, hint, required, completed);
         this.value = value;
     }
 

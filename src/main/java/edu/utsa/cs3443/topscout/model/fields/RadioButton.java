@@ -1,9 +1,10 @@
 package edu.utsa.cs3443.topscout.model.fields;
 
-public class RadioButton {
+public class RadioButton extends Field {
     boolean selected;
 
-    public RadioButton(boolean selected) {
+    public RadioButton(String id, String label, String hint, boolean required, boolean selected, boolean completed) {
+        super(id, label, hint, required, completed);
         this.selected = selected;
     }
 

@@ -6,8 +6,8 @@ public class Contact extends Field{
 
     private HashMap<String, String> contactInfo;
 
-    public Contact(String id, String label, String hint, boolean required, HashMap<String, String> contactInfo) {
-        super(id, label, hint, required);
+    public Contact(String id, String label, String hint, boolean required, HashMap<String, String> contactInfo, boolean completed) {
+        super(id, label, hint, required, completed);
         this.contactInfo = contactInfo;
         implementEmptyContactInfo();
     }
