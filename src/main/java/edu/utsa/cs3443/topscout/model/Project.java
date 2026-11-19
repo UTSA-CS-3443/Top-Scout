@@ -27,6 +27,36 @@ public class Project {
     public void addStage(ProjectStage stage) {
         stages.add(stage);
     }
+    public ProjectStage getStage(String stageId) {
+        for (ProjectStage stage : stages) {
+            if (stage.getId().equals(stageId)) {
+                return stage;
+            }
+        }
+        return null;
+    }
+    public int getTrackedTaskCount(){
+        int count = 0;
+        for (ProjectStage stage : stages) {
+            count += stage.getTrackedTaskCount();
+        }
+        return count;
+    }
+    public int getCompletedTaskCount(){
+        int count = 0;
+        for (ProjectStage stage : stages) {
+            count += stage.getCompletedTaskCount();
+        }
+        return count;
+    }
+    public int getProgressPercent() {
+        int trackedTaskCount = getTrackedTaskCount();
+        if (trackedTaskCount == 0) {
+            return 100; // If there are no tracked tasks, consider the project complete
+        }
+        return (int) Math.round((double) getCompletedTaskCount() / trackedTaskCount * 100);
+    }
+
 
     // Getters and setters
     public String getId() {
