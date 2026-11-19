@@ -5,22 +5,24 @@ public class Field {
     private String label;
     private String hint;
     private boolean required;
-    private boolean completed;
 
-    public Field(String id, String label, String hint, boolean required, boolean completed) {
+    public Field(String id, String label, String hint, boolean required) {
         this.id = id;
         this.label = label;
         this.hint = hint;
         this.required = required;
-        this.completed = completed;
-    }
+   }
 
     public void clear() {
         this.id = null;
         this.label = null;
         this.hint = null;
         this.required = false;
-        this.completed = false;
+    }
+
+    public boolean isFilled() {
+        return id != null && !id.isEmpty() &&
+               label != null && !label.isEmpty();
     }
 
     public String toString() {
@@ -29,7 +31,7 @@ public class Field {
                 ", label='" + label + '\'' +
                 ", hint='" + hint + '\'' +
                 ", required=" + required +
-                ", completed=" + completed +
+                ", completed=" + isFilled() +
                 '}';
     }
 
@@ -61,11 +63,4 @@ public class Field {
     public void setRequired(boolean required) {
         this.required = required;
     }
-    public boolean isCompleted() {
-        return completed;
-    }
-    public  setCompleted(boolean completed) {
-        this.completed = completed;
-    }
-
 }

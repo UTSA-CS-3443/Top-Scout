@@ -44,7 +44,7 @@ public class Task {
     public boolean isComplete() {
         for (Section section : sections) {
             for (Field field : section.getFields()) {
-                if (field.isRequired() && !field.isCompleted()) {
+                if (field.isRequired() && !field.isFilled()) {
                     return false;
                 }
             }
@@ -58,7 +58,7 @@ public class Task {
         for (Section section : sections) {
             for (Field field : section.getFields()) {
                 totalFields++;
-                if (field.isCompleted()) {
+                if (field.isFilled()) {
                     completedFields++;
                 }
             }

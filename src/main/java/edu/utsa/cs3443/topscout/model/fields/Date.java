@@ -2,14 +2,14 @@ package edu.utsa.cs3443.topscout.model.fields;
 
 public class Date extends TextArea {
 
-    public Date(String id, String label, String hint, boolean required, String value, boolean completed) {
-        super(id, label, hint, required, value, completed);
+    public Date(String id, String label, String hint, boolean required, String value) {
+        super(id, label, hint, required, value);
     }
 
     public String toString() {
         return "Date{" +
                 "date='" + getValue() + '\'' +
-                "} " + super.toString();
+                "} " + super.toStringWithoutValue();
     }
 
     @Override 

@@ -3,8 +3,8 @@ package edu.utsa.cs3443.topscout.model.fields;
 public class RadioButton extends Field {
     boolean selected;
 
-    public RadioButton(String id, String label, String hint, boolean required, boolean selected, boolean completed) {
-        super(id, label, hint, required, completed);
+    public RadioButton(String id, String label, String hint, boolean required, boolean selected) {
+        super(id, label, hint, required);
         this.selected = selected;
     }
 
@@ -14,4 +14,6 @@ public class RadioButton extends Field {
     public void setSelected(boolean selected) {
         this.selected = selected;
     }
+
+
 }

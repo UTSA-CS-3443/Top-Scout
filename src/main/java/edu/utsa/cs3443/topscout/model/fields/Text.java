@@ -2,14 +2,14 @@ package edu.utsa.cs3443.topscout.model.fields;
 
 public class Text extends TextArea {
 
-    public Text(String id, String label, String hint, boolean required, String value, boolean completed) {
-        super(id, label, hint, required, value, completed);
+    public Text(String id, String label, String hint, boolean required, String value) {
+        super(id, label, hint, required, value);
     }
 
     public String toString() {
         return "Text{" +
                 "text='" + getValue() + '\'' +
-                "} " + super.toString();
+                "} " + super.toStringWithoutValue();
     }
 
     @Override 
