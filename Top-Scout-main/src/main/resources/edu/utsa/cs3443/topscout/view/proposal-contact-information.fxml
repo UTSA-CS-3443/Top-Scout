@@ -1,9 +1,1005 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <!-- Layout for proposal-contact-information.fxml. Design this screen in Scene Builder. -->
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="edu.utsa.cs3443.topscout.controller.ProposalContactInformationController">
-</VBox>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.topscout.controller.MainScreenController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="651.0" prefWidth="900.0" spacing="10.0" style="-fx-background-color: #C6AE93;">
+         <children>
+            <HBox alignment="CENTER" prefHeight="78.0" prefWidth="600.0" style="-fx-background-color: #0C256D;">
+               <children>
+                  <Button fx:id="home" mnemonicParsing="false" onAction="#goHome" style="-fx-background-color: rgba(0,0,0,0);">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/home_button.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Label fx:id="nameOfProject" alignment="CENTER" prefHeight="35.0" prefWidth="792.0" text="Contact Information" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="37.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/boy_scout_logo.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </HBox>
+            <VBox alignment="CENTER" prefHeight="509.0" prefWidth="860.0" style="-fx-background-color: #ffffff; -fx-border-color: #0C256D;">
+               <children>
+                  <ScrollPane prefHeight="464.0" prefWidth="817.0" style="-fx-background: #FFFFFF; -fx-background-color: #FFFFFF;">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="799.0">
+                           <children>
+                              <VBox prefHeight="800.0" prefWidth="799.0" style="-fx-background: #FFFFFF;">
+                                 <children>
+                                    <VBox layoutX="10.0" layoutY="10.0" prefHeight="125.0" prefWidth="799.0">
+                                       <children>
+                                          <Label prefHeight="24.0" prefWidth="517.0" style="-fx-font-weight: bold;" text="Eagle Scout Candidate" textFill="#0c256d" textOverrun="CLIP" wrapText="true" />
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="456.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Name:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="ESCname" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="542.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Date of Birth:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="ESCdob" prefHeight="28.0" prefWidth="307.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="877.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Email Address:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="ESCemail" layoutX="104.0" layoutY="11.0" prefHeight="28.0" prefWidth="295.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="877.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="BSA PID number:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="ESCbsa" prefHeight="28.0" prefWidth="287.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="262.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Address:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="ESCadd" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="208.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="City:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="ESCcity" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="272.0" layoutY="10.0" prefHeight="31.0" prefWidth="176.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="State:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="ESCstate" prefHeight="28.0" prefWidth="113.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="480.0" layoutY="10.0" prefHeight="31.0" prefWidth="208.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Zip:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="ESCzip" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="58.0" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="877.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Preferred Telephone:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="ESCemail1" layoutX="104.0" layoutY="11.0" prefHeight="28.0" prefWidth="268.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="877.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Life Board of Review Date:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="ESClbrd" prefHeight="28.0" prefWidth="233.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="10.0" layoutY="10.0" prefHeight="125.0" prefWidth="799.0">
+                                       <children>
+                                          <Label prefHeight="24.0" prefWidth="517.0" style="-fx-font-weight: bold;" text="Current Unit Information" textFill="#0c256d" textOverrun="CLIP" wrapText="true" />
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="877.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Check One:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <RadioButton mnemonicParsing="false" text="Scoutmaster">
+                                                         <HBox.margin>
+                                                            <Insets right="10.0" />
+                                                         </HBox.margin>
+                                                         <toggleGroup>
+                                                            <ToggleGroup fx:id="unitType1" />
+                                                         </toggleGroup>
+                                                      </RadioButton>
+                                                      <RadioButton layoutX="87.0" layoutY="17.0" mnemonicParsing="false" text="Crew Advisor" toggleGroup="$unitType1">
+                                                         <HBox.margin>
+                                                            <Insets right="10.0" />
+                                                         </HBox.margin>
+                                                      </RadioButton>
+                                                      <RadioButton layoutX="175.0" layoutY="17.0" mnemonicParsing="false" text="Skipper" toggleGroup="$unitType1" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="877.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Unit Number:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="CUIunitNum" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="456.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Name Of District:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="CUInameDistrict" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="542.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Name of Council:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="CUInameCouncil" prefHeight="28.0" prefWidth="307.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="125.0" prefWidth="799.0">
+                                       <children>
+                                          <Label prefHeight="24.0" prefWidth="517.0" style="-fx-font-weight: bold;" text="Unit Leader" textFill="#0c256d" textOverrun="CLIP" wrapText="true" />
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="456.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Name:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="ULname" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="542.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Preferred Telephone">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="ULtel" prefHeight="28.0" prefWidth="307.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="262.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Address:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="ULadd" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="208.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="City:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="ULcity" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="272.0" layoutY="10.0" prefHeight="31.0" prefWidth="176.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="State:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="ULstate" prefHeight="28.0" prefWidth="113.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="480.0" layoutY="10.0" prefHeight="31.0" prefWidth="208.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Zip:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="ULzip" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="877.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Email Address:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="ULemail" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="877.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Check One:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <RadioButton mnemonicParsing="false" text="Scoutmaster">
+                                                         <HBox.margin>
+                                                            <Insets right="10.0" />
+                                                         </HBox.margin>
+                                                         <toggleGroup>
+                                                            <ToggleGroup fx:id="unitType" />
+                                                         </toggleGroup>
+                                                      </RadioButton>
+                                                      <RadioButton layoutX="87.0" layoutY="17.0" mnemonicParsing="false" text="Crew Advisor" toggleGroup="$unitType">
+                                                         <HBox.margin>
+                                                            <Insets right="10.0" />
+                                                         </HBox.margin>
+                                                      </RadioButton>
+                                                      <RadioButton layoutX="175.0" layoutY="17.0" mnemonicParsing="false" text="Skipper" toggleGroup="$unitType" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="10.0" layoutY="10.0" prefHeight="125.0" prefWidth="799.0">
+                                       <children>
+                                          <Label prefHeight="24.0" prefWidth="517.0" style="-fx-font-weight: bold;" text="Unit Committee Chair" textFill="#0c256d" textOverrun="CLIP" wrapText="true" />
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="456.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Name:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="UCCname" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="542.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Preferred Telephone">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="UCCtel" prefHeight="28.0" prefWidth="311.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="262.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Address:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="UCCadd" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="208.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="City:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="UCCcity" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="272.0" layoutY="10.0" prefHeight="31.0" prefWidth="176.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="State:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="UCCstate" prefHeight="28.0" prefWidth="113.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="480.0" layoutY="10.0" prefHeight="31.0" prefWidth="208.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Zip:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="UCCzip" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="877.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Email Address:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="UCCemail" prefHeight="28.0" prefWidth="664.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="10.0" layoutY="135.0" prefHeight="125.0" prefWidth="799.0">
+                                       <children>
+                                          <Label prefHeight="24.0" prefWidth="517.0" style="-fx-font-weight: bold;" text="Unit Advancement Coordinator" textFill="#0c256d" textOverrun="CLIP" wrapText="true" />
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="456.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Name:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="UDCname" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="542.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Preferred Telephone">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="UACtel" prefHeight="28.0" prefWidth="311.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="262.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Address:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="UACadd" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="208.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="City:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="UACcity" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="272.0" layoutY="10.0" prefHeight="31.0" prefWidth="176.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="State:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="UACstate" prefHeight="28.0" prefWidth="113.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="480.0" layoutY="10.0" prefHeight="31.0" prefWidth="208.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Zip:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="UACzip" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="877.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Email Address:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="UACemail" prefHeight="28.0" prefWidth="664.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="10.0" layoutY="261.0" prefHeight="125.0" prefWidth="799.0">
+                                       <children>
+                                          <Label prefHeight="24.0" prefWidth="517.0" style="-fx-font-weight: bold;" text="Project Beneficiary" textFill="#0c256d" textOverrun="CLIP" wrapText="true" />
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="456.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Name:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="PBname" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="542.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Preferred Telephone">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="PBtel" prefHeight="28.0" prefWidth="311.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="262.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Address:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="PBadd" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="208.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="City:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="PBcity" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="272.0" layoutY="10.0" prefHeight="31.0" prefWidth="176.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="State:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="PBstate" prefHeight="28.0" prefWidth="113.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="480.0" layoutY="10.0" prefHeight="31.0" prefWidth="208.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Zip:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="PBzip" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="877.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Email Address:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="PBemail" prefHeight="28.0" prefWidth="664.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="10.0" layoutY="386.0" prefHeight="125.0" prefWidth="799.0">
+                                       <children>
+                                          <Label prefHeight="24.0" prefWidth="517.0" style="-fx-font-weight: bold;" text="Project Beneficiary Representative" textFill="#0c256d" textOverrun="CLIP" wrapText="true" />
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="456.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Name:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="PBRname" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="542.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Preferred Telephone">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="PBRtel" prefHeight="28.0" prefWidth="311.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="262.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Address:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="PBRadd" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="208.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="City:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="PBRcity" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="272.0" layoutY="10.0" prefHeight="31.0" prefWidth="176.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="State:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="PBRstate" prefHeight="28.0" prefWidth="113.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="480.0" layoutY="10.0" prefHeight="31.0" prefWidth="208.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Zip:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="PBRzip" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="877.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Email Address:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="PBRemail" prefHeight="28.0" prefWidth="664.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="10.0" layoutY="511.0" prefHeight="125.0" prefWidth="799.0">
+                                       <children>
+                                          <Label prefHeight="24.0" prefWidth="517.0" style="-fx-font-weight: bold;" text="Youth Council Service Center" textFill="#0c256d" textOverrun="CLIP" wrapText="true" />
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="456.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Name:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="YCSCname" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="542.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Preferred Telephone">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="YCSCtel" prefHeight="28.0" prefWidth="311.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="262.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Address:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="YCSCadd" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="208.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="City:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="YCSCcity" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="272.0" layoutY="10.0" prefHeight="31.0" prefWidth="176.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="State:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="YCSCstate" prefHeight="28.0" prefWidth="113.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="480.0" layoutY="10.0" prefHeight="31.0" prefWidth="208.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Zip:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="YCSCzip" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="877.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Email Address:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="UACemail111" prefHeight="28.0" prefWidth="664.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="10.0" layoutY="637.0" prefHeight="125.0" prefWidth="799.0">
+                                       <children>
+                                          <Label prefHeight="24.0" prefWidth="517.0" style="-fx-font-weight: bold;" text="Council or District Project Approval Representative" textFill="#0c256d" textOverrun="CLIP" wrapText="true" />
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="456.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Name:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="CDPname" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="542.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Preferred Telephone">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="CDPtel" prefHeight="28.0" prefWidth="311.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="262.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Address:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="CDPadd" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="208.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="City:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="CDPcity" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="272.0" layoutY="10.0" prefHeight="31.0" prefWidth="176.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="State:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="CDPstate" prefHeight="28.0" prefWidth="113.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="480.0" layoutY="10.0" prefHeight="31.0" prefWidth="208.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Zip:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="CDPzip" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="877.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Email Address:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="CDPemail" prefHeight="28.0" prefWidth="664.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="10.0" layoutY="695.0" prefHeight="125.0" prefWidth="799.0">
+                                       <children>
+                                          <Label prefHeight="24.0" prefWidth="517.0" style="-fx-font-weight: bold;" text="Project Coach" textFill="#0c256d" textOverrun="CLIP" wrapText="true" />
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="456.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Name:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="PCname" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="542.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Preferred Telephone">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="PCtel" prefHeight="28.0" prefWidth="311.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="262.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Address:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="PCadd" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="208.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="City:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="PCcity" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="272.0" layoutY="10.0" prefHeight="31.0" prefWidth="176.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="State:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="PCstate" prefHeight="28.0" prefWidth="113.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" layoutX="480.0" layoutY="10.0" prefHeight="31.0" prefWidth="208.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Zip:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="PCzip" prefHeight="28.0" prefWidth="141.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="17.0" prefWidth="501.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="877.0" style="-fx-border-color: #0c256d;">
+                                                   <children>
+                                                      <Label text="Email Address:">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" right="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="PCemail" prefHeight="28.0" prefWidth="664.0" promptText="Type here..." style="-fx-border-color: #ffffff;" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </VBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="44.0" prefWidth="600.0" style="-fx-background-color: #0C256D;">
+               <children>
+                  <Button fx:id="leftArrow" mnemonicParsing="false" onAction="#goBack" style="-fx-background-color: rgba(0,0,0,0);">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/white_arrow_button.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
