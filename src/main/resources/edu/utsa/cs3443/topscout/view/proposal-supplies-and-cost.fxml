@@ -12,13 +12,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<!-- Layout for proposal-supplies-and-cost.fxml. Design this screen in Scene Builder. -->
+<!-- Layout for proposal-supplies-and-cost.fxml. -->
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="494.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.topscout.controller.ProposalSuppliesAndCostController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.topscout.controller.ProposalSuppliesAndCostController">
    <children>
-      <VBox alignment="CENTER" prefHeight="494.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #C6AE93;">
+      <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: #C6AE93;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="78.0" prefWidth="600.0" style="-fx-background-color: #0C256D;">
+            <HBox alignment="CENTER" prefHeight="78.0" style="-fx-background-color: #0C256D;">
                <children>
                   <Button fx:id="home" mnemonicParsing="false" onAction="#homeButtonPressed" style="-fx-background-color: rgba(0,0,0,0);">
                      <graphic>
@@ -29,7 +29,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Label fx:id="nameOfProject" alignment="CENTER" prefHeight="35.0" prefWidth="534.0" text="Supplies &amp; Cost" textFill="WHITE">
+                  <Label fx:id="nameOfProject" alignment="CENTER" maxWidth="Infinity" prefHeight="35.0" text="Supplies &amp; Cost" textFill="WHITE" HBox.hgrow="ALWAYS">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -38,76 +38,89 @@
                      <image>
                         <Image url="@../images/boy_scout_logo.png" />
                      </image>
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
                   </ImageView>
                </children>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
                <padding>
                   <Insets left="20.0" right="20.0" />
                </padding>
             </HBox>
-            <VBox alignment="CENTER" prefHeight="359.0" prefWidth="560.0" style="-fx-background-color: #ffffff; -fx-border-color: #0C256D;">
+            <VBox alignment="CENTER" style="-fx-background-color: #ffffff; -fx-border-color: #0C256D;" VBox.vgrow="ALWAYS">
                <children>
-                  <ScrollPane prefHeight="336.0" prefWidth="518.0" style="-fx-background: #FFFFFF; -fx-background-color: #FFFFFF;">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="500.0">
+                  <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background: #FFFFFF; -fx-background-color: #FFFFFF;" VBox.vgrow="ALWAYS">
+                     <content>
+                        <VBox spacing="22.0" style="-fx-background-color: #FFFFFF;">
                            <children>
-                              <VBox prefHeight="800.0" prefWidth="501.0" style="-fx-background: #FFFFFF;">
+                              <VBox spacing="4.0">
                                  <children>
-                                    <Label prefHeight="24.0" prefWidth="517.0" style="-fx-font-weight: bold;" text="Materials" textFill="#0c256d" textOverrun="CLIP" wrapText="true" />
-                                    <Label prefHeight="59.0" prefWidth="501.0" text="What types of materials if any will you need? You do not need a detailed list or exact quantities, but you must show youhave a reasonable idea of what is required. For example, for lumber, use basic dimensions such as 2x4 or 4x4." textFill="#0c256d" textOverrun="CLIP" wrapText="true">
+                                    <Label maxWidth="Infinity" style="-fx-font-weight: bold;" text="Materials" textFill="#0c256d" wrapText="true" />
+                                    <Label maxWidth="Infinity" text="What types of materials if any will you need? You do not need a detailed list or exact quantities, but you must show you have a reasonable idea of what is required. For example, for lumber, use basic dimensions such as 2x4 or 4x4." textFill="#0c256d" wrapText="true">
                                        <font>
-                                          <Font size="10.0" />
+                                          <Font size="12.0" />
                                        </font>
                                     </Label>
-                                    <TextArea fx:id="textEntry2" prefHeight="98.0" prefWidth="518.0" promptText="Type here..." style="-fx-color: #EFF9FF;" />
-                                    <Label layoutX="10.0" layoutY="10.0" prefHeight="24.0" prefWidth="517.0" style="-fx-font-weight: bold;" text="Supplies" textFill="#0c256d" textOverrun="CLIP" wrapText="true" />
-                                    <Label layoutX="10.0" layoutY="34.0" prefHeight="38.0" prefWidth="501.0" text="What types of supplies, if any, will you need? You do not need a detailed list or exact quantities, but you must show you have a reasonable idea of what is required." textFill="#0c256d" textOverrun="CLIP" wrapText="true">
+                                    <TextArea fx:id="textEntry2" maxWidth="Infinity" prefHeight="110.0" promptText="Type here..." style="-fx-color: #EFF9FF;" />
+                                 </children>
+                              </VBox>
+                              <VBox spacing="4.0">
+                                 <children>
+                                    <Label maxWidth="Infinity" style="-fx-font-weight: bold;" text="Supplies" textFill="#0c256d" wrapText="true" />
+                                    <Label maxWidth="Infinity" text="What types of supplies, if any, will you need? You do not need a detailed list or exact quantities, but you must show you have a reasonable idea of what is required." textFill="#0c256d" wrapText="true">
                                        <font>
-                                          <Font size="10.0" />
+                                          <Font size="12.0" />
                                        </font>
                                     </Label>
-                                    <TextArea fx:id="textEntry21" layoutX="10.0" layoutY="49.0" prefHeight="98.0" prefWidth="518.0" promptText="Type here..." style="-fx-color: #EFF9FF;" />
-                                    <Label layoutX="10.0" layoutY="147.0" prefHeight="24.0" prefWidth="517.0" style="-fx-font-weight: bold;" text="Tools" textFill="#0c256d" textOverrun="CLIP" wrapText="true" />
-                                    <Label layoutX="10.0" layoutY="171.0" prefHeight="50.0" prefWidth="501.0" text="What tools or equipment, if any, will you need? You do not need a detailed list, but you must show you have a reasonable idea of what is required." textFill="#0c256d" textOverrun="CLIP" wrapText="true">
+                                    <TextArea fx:id="textEntry21" maxWidth="Infinity" prefHeight="110.0" promptText="Type here..." style="-fx-color: #EFF9FF;" />
+                                 </children>
+                              </VBox>
+                              <VBox spacing="4.0">
+                                 <children>
+                                    <Label maxWidth="Infinity" style="-fx-font-weight: bold;" text="Tools" textFill="#0c256d" wrapText="true" />
+                                    <Label maxWidth="Infinity" text="What tools or equipment, if any, will you need? You do not need a detailed list, but you must show you have a reasonable idea of what is required." textFill="#0c256d" wrapText="true">
                                        <font>
-                                          <Font size="10.0" />
+                                          <Font size="12.0" />
                                        </font>
                                     </Label>
-                                    <TextArea fx:id="textEntry211" layoutX="10.0" layoutY="186.0" prefHeight="98.0" prefWidth="518.0" promptText="Type here..." style="-fx-color: #EFF9FF;" />
-                                    <Label layoutX="10.0" layoutY="280.0" prefHeight="24.0" prefWidth="517.0" style="-fx-font-weight: bold;" text="Other" textFill="#0c256d" textOverrun="CLIP" wrapText="true" />
-                                    <Label layoutX="10.0" layoutY="303.0" prefHeight="12.0" prefWidth="517.0" text="What other needs do you think you might encounter?" textFill="#0c256d" textOverrun="CLIP" wrapText="true">
+                                    <TextArea fx:id="textEntry211" maxWidth="Infinity" prefHeight="110.0" promptText="Type here..." style="-fx-color: #EFF9FF;" />
+                                 </children>
+                              </VBox>
+                              <VBox spacing="4.0">
+                                 <children>
+                                    <Label maxWidth="Infinity" style="-fx-font-weight: bold;" text="Other" textFill="#0c256d" wrapText="true" />
+                                    <Label maxWidth="Infinity" text="What other needs do you think you might encounter?" textFill="#0c256d" wrapText="true">
                                        <font>
-                                          <Font size="10.0" />
+                                          <Font size="12.0" />
                                        </font>
                                     </Label>
-                                    <TextArea fx:id="textEntry2111" layoutX="10.0" layoutY="318.0" prefHeight="98.0" prefWidth="518.0" promptText="Type here..." style="-fx-color: #EFF9FF;" />
-                                    <Label layoutX="10.0" layoutY="441.0" prefHeight="24.0" prefWidth="517.0" style="-fx-font-weight: bold;" text="Permits and Permissions" textFill="#0c256d" textOverrun="CLIP" wrapText="true" />
-                                    <Label layoutX="10.0" layoutY="458.0" prefHeight="12.0" prefWidth="517.0" text="Will permissions or permits (such as building permits) be required for your project? Who will obtain them? How long will it take?" textFill="#0c256d" textOverrun="CLIP" wrapText="true">
+                                    <TextArea fx:id="textEntry2111" maxWidth="Infinity" prefHeight="110.0" promptText="Type here..." style="-fx-color: #EFF9FF;" />
+                                 </children>
+                              </VBox>
+                              <VBox spacing="4.0">
+                                 <children>
+                                    <Label maxWidth="Infinity" style="-fx-font-weight: bold;" text="Permits and Permissions" textFill="#0c256d" wrapText="true" />
+                                    <Label maxWidth="Infinity" text="Will permissions or permits (such as building permits) be required for your project? Who will obtain them? How long will it take?" textFill="#0c256d" wrapText="true">
                                        <font>
-                                          <Font size="10.0" />
+                                          <Font size="12.0" />
                                        </font>
                                     </Label>
-                                    <TextArea fx:id="textEntry21111" layoutX="10.0" layoutY="473.0" prefHeight="98.0" prefWidth="518.0" promptText="Type here..." style="-fx-color: #EFF9FF;" />
+                                    <TextArea fx:id="textEntry21111" maxWidth="Infinity" prefHeight="110.0" promptText="Type here..." style="-fx-color: #EFF9FF;" />
                                  </children>
                               </VBox>
                            </children>
-                        </AnchorPane>
-                    </content>
+                           <padding>
+                              <Insets bottom="16.0" left="8.0" right="8.0" top="12.0" />
+                           </padding>
+                        </VBox>
+                     </content>
                   </ScrollPane>
                </children>
                <padding>
-                  <Insets left="20.0" right="20.0" />
+                  <Insets left="12.0" right="12.0" />
                </padding>
                <VBox.margin>
                   <Insets left="20.0" right="20.0" />
                </VBox.margin>
             </VBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="44.0" prefWidth="600.0" style="-fx-background-color: #0C256D;">
+            <HBox alignment="CENTER_LEFT" prefHeight="44.0" style="-fx-background-color: #0C256D;">
                <children>
                   <Button fx:id="leftArrow" mnemonicParsing="false" onAction="#backButtonPressed" style="-fx-background-color: rgba(0,0,0,0);">
                      <graphic>
@@ -119,9 +132,6 @@
                      </graphic>
                   </Button>
                </children>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
                <padding>
                   <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                </padding>

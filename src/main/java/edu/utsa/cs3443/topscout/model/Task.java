@@ -55,8 +55,12 @@ public class Task {
         int totalFields = 0;
         int completedFields = 0;
 
+        // Only required fields count, the same rule isComplete() uses, so 100% means the task is complete
         for (Section section : sections) {
             for (Field field : section.getFields()) {
+                if (!field.isRequired()) {
+                    continue;
+                }
                 totalFields++;
                 if (field.isFilled()) {
                     completedFields++;
@@ -65,10 +69,10 @@ public class Task {
         }
 
         if (totalFields == 0) {
-            return 100; // If there are no fields, consider it complete
+            return 100; // If nothing is required, consider it complete
         }
 
-        return (int) Math.round((double) (completedFields * 100) / totalFields); // I added a cast to double to ensure proper division and rounding
+        return (int) Math.round((double) (completedFields * 100) / totalFields);
     }
 
 

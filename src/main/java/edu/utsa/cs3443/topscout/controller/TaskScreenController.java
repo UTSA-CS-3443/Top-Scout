@@ -63,6 +63,9 @@ public abstract class TaskScreenController extends BaseScreenController
      * @param fieldId the id of the field in the template
      */
     protected void bindText(TextInputControl control, String fieldId) {
+        if (control instanceof javafx.scene.control.TextArea box) {
+            box.setWrapText(true);
+        }
         Field field = currentTask.getField(fieldId);
         if (field instanceof TextArea area) {
             control.setText(area.getValue());
@@ -210,6 +213,7 @@ public abstract class TaskScreenController extends BaseScreenController
     public void homeButtonPressed(ActionEvent event) {
         if (collectValues() && saveTask()) {
             switchScreen(HOME_SCREEN);
+            showToast("Saved");
         }
     }
 
@@ -223,6 +227,7 @@ public abstract class TaskScreenController extends BaseScreenController
     public void backButtonPressed(ActionEvent event) {
         if (collectValues() && saveTask()) {
             switchScreen(BACK_SCREEN);
+            showToast("Saved");
         }
     }
 

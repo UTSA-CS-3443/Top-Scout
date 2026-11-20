@@ -15,6 +15,17 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 
+import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
+import javafx.util.Duration;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
+import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.effect.GaussianBlur;
+import javafx.scene.layout.StackPane;
+
 /**
  * Parent of all screen controllers. Holds the objects every screen shares
  * (the window, the ProjectManager, and the project, stage, and task the user
@@ -82,6 +93,7 @@ public abstract class BaseScreenController {
             } else {
                 // Later screens: swap the content so the window keeps its size
                 scene.setRoot(root);
+                primaryStage.sizeToScene();
             }
             primaryStage.show();
         } catch (IOException e) {
@@ -107,6 +119,52 @@ public abstract class BaseScreenController {
             }
             blocks.getChildren().add(block);
         }
+    }
+
+    /**
+     * Shows a short message in the middle of the current screen while the screen
+     * behind it blurs, then fades both away. Used for "Saved" after the back or
+     * home button.
+     *
+     * @param message the text to show
+     */
+    protected void showToast(String message) {
+        if (!(primaryStage.getScene().getRoot() instanceof AnchorPane root)
+                || root.getChildren().isEmpty()) {
+            return; // only screens built on an AnchorPane can show it
+        }
+        Node content = root.getChildren().get(0); // the screen's layout, which gets blurred
+
+        Label toast = new Label(message);
+        toast.setStyle("-fx-background-color: #0C256D; -fx-text-fill: white; -fx-font-size: 22px; "
+                + "-fx-font-weight: bold; -fx-padding: 14 40 14 40; -fx-background-radius: 24;");
+
+        StackPane overlay = new StackPane(toast);
+        overlay.setAlignment(Pos.CENTER);
+        overlay.setStyle("-fx-background-color: rgba(255,255,255,0.35);");
+        overlay.setMouseTransparent(true); // clicks pass through while it fades
+        AnchorPane.setTopAnchor(overlay, 0.0);
+        AnchorPane.setBottomAnchor(overlay, 0.0);
+        AnchorPane.setLeftAnchor(overlay, 0.0);
+        AnchorPane.setRightAnchor(overlay, 0.0);
+
+        GaussianBlur blur = new GaussianBlur(10);
+        content.setEffect(blur);
+        root.getChildren().add(overlay);
+
+        // Hold for 0.9 seconds, then fade the blur and the notice out over 0.6 seconds
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.seconds(0.9),
+                        new KeyValue(blur.radiusProperty(), 10),
+                        new KeyValue(overlay.opacityProperty(), 1.0)),
+                new KeyFrame(Duration.seconds(1.5),
+                        new KeyValue(blur.radiusProperty(), 0),
+                        new KeyValue(overlay.opacityProperty(), 0.0)));
+        timeline.setOnFinished(e -> {
+            content.setEffect(null);
+            root.getChildren().remove(overlay);
+        });
+        timeline.play();
     }
 
     /**

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<!-- Layout for project-overview-view.fxml. Design this screen in Scene Builder. -->
+<!-- Layout for project-overview-view.fxml. -->
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.topscout.controller.ProjectOverviewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.topscout.controller.ProjectOverviewController">
    <children>
-      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #C6AE93;">
+      <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: #C6AE93;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="600.0" style="-fx-background-color: #0C256D;">
+            <HBox alignment="CENTER" prefHeight="78.0" style="-fx-background-color: #0C256D;">
                <children>
                   <Button fx:id="home" mnemonicParsing="false" onAction="#homeButtonPressed" style="-fx-background-color: rgba(0,0,0,0);">
                      <graphic>
@@ -23,7 +23,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Label fx:id="nameOfProject" alignment="CENTER" prefHeight="35.0" prefWidth="534.0" text="Project Name" textFill="WHITE">
+                  <Label fx:id="nameOfProject" alignment="CENTER" maxWidth="Infinity" prefHeight="35.0" text="Project Name" textFill="WHITE" HBox.hgrow="ALWAYS">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -32,82 +32,75 @@
                      <image>
                         <Image url="@../images/boy_scout_logo.png" />
                      </image>
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
                   </ImageView>
                </children>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
                <padding>
                   <Insets left="20.0" right="20.0" />
                </padding>
             </HBox>
-            <VBox alignment="CENTER" prefHeight="268.0" prefWidth="585.0" spacing="10.0" style="-fx-background-color: #ffffff; -fx-border-color: #0C256D;">
+            <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: #ffffff; -fx-border-color: #0C256D;" VBox.vgrow="ALWAYS">
                <children>
                   <Label style="-fx-font-weight: bold;" text="Proposal Tasks" textFill="#0c256d">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <ProgressBar fx:id="proposalProgress" prefHeight="31.0" prefWidth="545.0" progress="0.0" />
-                  <ScrollPane prefHeight="119.0" prefWidth="518.0" style="-fx-border-color: #FFFFFF; -fx-background-color: #FFFFFF; -fx-background: #FFFFFF;">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="224.0" prefWidth="500.0">
+                  <ProgressBar fx:id="proposalProgress" maxWidth="Infinity" prefHeight="31.0" progress="0.0" />
+                  <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-border-color: #FFFFFF; -fx-background-color: #FFFFFF; -fx-background: #FFFFFF;" VBox.vgrow="ALWAYS">
+                     <content>
+                        <VBox spacing="10.0" style="-fx-background-color: #FFFFFF;">
                            <children>
-                              <VBox prefHeight="232.0" prefWidth="518.0" spacing="10.0">
-                                 <children>
-                                    <Button fx:id="contactInfo1" mnemonicParsing="false" onAction="#goToContactInfo" prefHeight="38.0" prefWidth="518.0" style="-fx-background-color: #F2F2F2; -fx-alignment: left;" text="Contact Information" textFill="#0c256d">
-                                       <graphic>
-                                          <ProgressIndicator prefHeight="21.0" prefWidth="28.0" progress="0.0" style="-fx-margin: -100px;">
-                                             <padding>
-                                                <Insets bottom="-10.0" />
-                                             </padding>
-                                          </ProgressIndicator>
-                                       </graphic>
-                                    </Button>
-                                    <Button fx:id="projDescBenefits" mnemonicParsing="false" onAction="#goToProjDescBenefits" prefHeight="38.0" prefWidth="518.0" style="-fx-background-color: #F2F2F2; -fx-alignment: left;" text="Project Description and Benefit" textFill="#0c256d">
-                                       <graphic>
-                                          <ProgressIndicator prefHeight="21.0" prefWidth="28.0" progress="0.0" style="-fx-margin: -100px;">
-                                             <padding>
-                                                <Insets bottom="-10.0" />
-                                             </padding>
-                                          </ProgressIndicator>
-                                       </graphic>
-                                    </Button>
-                                    <Button fx:id="suppliesCosts" layoutX="10.0" layoutY="285.0" mnemonicParsing="false" onAction="#goToSuppliesCost" prefHeight="38.0" prefWidth="518.0" style="-fx-background-color: #F2F2F2; -fx-alignment: left;" text="Supplies &amp; Cost" textFill="#0c256d">
-                                       <graphic>
-                                          <ProgressIndicator prefHeight="21.0" prefWidth="28.0" progress="0.0" style="-fx-margin: -100px;">
-                                             <padding>
-                                                <Insets bottom="-10.0" />
-                                             </padding>
-                                          </ProgressIndicator>
-                                       </graphic>
-                                    </Button>
-                                    <Button fx:id="logisticsSafety" layoutX="10.0" layoutY="310.0" mnemonicParsing="false" onAction="#goToLogisticsSafety" prefHeight="38.0" prefWidth="518.0" style="-fx-background-color: #F2F2F2; -fx-alignment: left;" text="Logistics &amp; Safety" textFill="#0c256d">
-                                       <graphic>
-                                          <ProgressIndicator prefHeight="21.0" prefWidth="28.0" progress="0.0" style="-fx-margin: -100px;">
-                                             <padding>
-                                                <Insets bottom="-10.0" />
-                                             </padding>
-                                          </ProgressIndicator>
-                                       </graphic>
-                                    </Button>
-                                    <Button fx:id="projectNotes" layoutX="10.0" layoutY="335.0" mnemonicParsing="false" onAction="#goToProjNotes" prefHeight="38.0" prefWidth="518.0" style="-fx-background-color: #F2F2F2; -fx-alignment: left;" text="Project Notes" textFill="#0c256d">
+                              <Button fx:id="contactInfo1" maxWidth="Infinity" mnemonicParsing="false" onAction="#goToContactInfo" prefHeight="38.0" style="-fx-background-color: #F2F2F2; -fx-alignment: center-left;" text="Contact Information" textFill="#0c256d">
+                                 <graphic>
+                                    <ProgressIndicator prefHeight="21.0" prefWidth="28.0" progress="0.0">
                                        <padding>
-                                          <Insets left="40.0" />
+                                          <Insets bottom="-10.0" />
                                        </padding>
-                                    </Button>
-                                 </children>
-                              </VBox>
+                                    </ProgressIndicator>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="projDescBenefits" maxWidth="Infinity" mnemonicParsing="false" onAction="#goToProjDescBenefits" prefHeight="38.0" style="-fx-background-color: #F2F2F2; -fx-alignment: center-left;" text="Project Description and Benefit" textFill="#0c256d">
+                                 <graphic>
+                                    <ProgressIndicator prefHeight="21.0" prefWidth="28.0" progress="0.0">
+                                       <padding>
+                                          <Insets bottom="-10.0" />
+                                       </padding>
+                                    </ProgressIndicator>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="suppliesCosts" maxWidth="Infinity" mnemonicParsing="false" onAction="#goToSuppliesCost" prefHeight="38.0" style="-fx-background-color: #F2F2F2; -fx-alignment: center-left;" text="Supplies &amp; Cost" textFill="#0c256d">
+                                 <graphic>
+                                    <ProgressIndicator prefHeight="21.0" prefWidth="28.0" progress="0.0">
+                                       <padding>
+                                          <Insets bottom="-10.0" />
+                                       </padding>
+                                    </ProgressIndicator>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="logisticsSafety" maxWidth="Infinity" mnemonicParsing="false" onAction="#goToLogisticsSafety" prefHeight="38.0" style="-fx-background-color: #F2F2F2; -fx-alignment: center-left;" text="Logistics &amp; Safety" textFill="#0c256d">
+                                 <graphic>
+                                    <ProgressIndicator prefHeight="21.0" prefWidth="28.0" progress="0.0">
+                                       <padding>
+                                          <Insets bottom="-10.0" />
+                                       </padding>
+                                    </ProgressIndicator>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="projectNotes" maxWidth="Infinity" mnemonicParsing="false" onAction="#goToProjNotes" prefHeight="38.0" style="-fx-background-color: #F2F2F2; -fx-alignment: center-left;" text="Project Notes" textFill="#0c256d">
+                                 <padding>
+                                    <Insets left="40.0" />
+                                 </padding>
+                              </Button>
                            </children>
-                        </AnchorPane>
-                    </content>
+                           <padding>
+                              <Insets right="8.0" />
+                           </padding>
+                        </VBox>
+                     </content>
                   </ScrollPane>
-                  <HBox prefHeight="21.0" prefWidth="518.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="31.0">
                      <children>
-                        <Label prefWidth="360.0" text="Pressing the back button saves progress." textFill="#0c256d">
+                        <Label maxWidth="Infinity" text="Pressing the back button saves progress." textFill="#0c256d" HBox.hgrow="ALWAYS">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -116,14 +109,14 @@
                      </children>
                   </HBox>
                </children>
+               <padding>
+                  <Insets bottom="14.0" left="20.0" right="20.0" top="10.0" />
+               </padding>
                <VBox.margin>
                   <Insets left="20.0" right="20.0" />
                </VBox.margin>
-               <padding>
-                  <Insets left="20.0" right="20.0" />
-               </padding>
             </VBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="44.0" prefWidth="600.0" style="-fx-background-color: #0C256D;">
+            <HBox alignment="CENTER_LEFT" prefHeight="44.0" style="-fx-background-color: #0C256D;">
                <children>
                   <Button fx:id="leftArrow" mnemonicParsing="false" onAction="#backButtonPressed" style="-fx-background-color: rgba(0,0,0,0);">
                      <graphic>
@@ -135,12 +128,10 @@
                      </graphic>
                   </Button>
                </children>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
                <padding>
                   <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
-               </padding></HBox>
+               </padding>
+            </HBox>
          </children>
       </VBox>
    </children>
