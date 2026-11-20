@@ -19,6 +19,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
 
+import edu.utsa.cs3443.topscout.model.fields.Field;
+
 /**
  * Handles all reading and writing of data. Loads the blank template, creates new
  * projects from it, lists the saved projects, and saves, loads, renames, and
@@ -53,7 +55,9 @@ public class ProjectManager {
      */
     public ProjectManager() {
         rootDirectory = Path.of(System.getProperty("user.home"), ".topscout", "projects");
-        gson = new GsonBuilder().setPrettyPrinting().create();
+        gson = new GsonBuilder().setPrettyPrinting()
+                .registerTypeHierarchyAdapter(Field.class, new FieldAdapter())
+                .create();
     }
 
     /**

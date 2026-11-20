@@ -4,28 +4,24 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 
 /**
- * Controls the Logistics & Safety screen (proposal-logistics-and-safety.fxml),
- * with text boxes for how materials, tools, and helpers will be transported
- * and for the hazards and safety concerns to be aware of.
+ * Controls the Logistics &amp; Safety screen (proposal-logistics-and-safety.fxml):
+ * the transportation question and the hazards question.
  */
 public class ProposalLogisticsAndSafetyController extends TaskScreenController {
 
-    /** Linked to fx:id="transportationBox" in proposal-logistics-and-safety.fxml. */
+    /** Transportation answer. Linked to fx:id="textEntry". */
     @FXML
-    private TextArea transportationBox;
+    private TextArea textEntry;
 
-    /** Linked to fx:id="hazardsBox". */
+    /** Hazards answer. Linked to fx:id="textEntry2". */
     @FXML
-    private TextArea hazardsBox;
+    private TextArea textEntry2;
 
-    /**
-     * Runs automatically when the FXML finishes loading. Links each text box to
-     * its question, so the saved answers appear and are saved again when the
-     * user leaves the screen.
-     */
+    /** Runs when the FXML finishes loading. Links each box to its field. */
     @FXML
     public void initialize() {
-        bindText(transportationBox, "transportation");
-        bindText(hazardsBox, "hazards");
+        showProjectName();
+        bindText(textEntry, "transportation");
+        bindText(textEntry2, "hazards");
     }
 }

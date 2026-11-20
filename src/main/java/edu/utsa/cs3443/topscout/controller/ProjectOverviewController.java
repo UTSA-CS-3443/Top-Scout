@@ -1,182 +1,151 @@
 package edu.utsa.cs3443.topscout.controller;
 
 import java.io.IOException;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Optional;
 
-import edu.utsa.cs3443.topscout.model.ProjectStage;
+import edu.utsa.cs3443.topscout.model.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextInputDialog;
-import javafx.scene.layout.HBox;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.control.ProgressIndicator;
 
 /**
- * Controls the project overview screen (project-overview-view.fxml). Shows the
- * project title, shows progress for the three stages, opens each stage, and
- * lets the user rename the project.
+ * Controls the project overview screen (project-overview-view.fxml). It shows
+ * the project name, the progress of The Proposal, and one button per Proposal
+ * task with its own progress circle. Clicking a task opens that task's screen.
  */
 public class ProjectOverviewController extends BaseScreenController implements TraversalController {
 
-    /** Stage ids exactly as they appear in eagle_template.json. */
-    private static final String PROPOSAL_ID = "proposal";
-    private static final String PRE_PROJECT_ID = "before-project";
-    private static final String POST_PROJECT_ID = "after-project";
+    /** The id of The Proposal stage in the template. */
+    private static final String PROPOSAL = "proposal";
 
-    /** The project title at the top of the screen. */
-    @FXML
-    private Label titleLabel;
+    private static final String HOME_SCREEN = "main-view.fxml";
 
-    /** One row of progress blocks for each stage. */
-    @FXML
-    private HBox proposalBlocks;
-    @FXML
-    private HBox preProjectBlocks;
-    @FXML
-    private HBox postProjectBlocks;
+    @FXML private Label nameOfProject;
+    @FXML private ProgressBar proposalProgress;
+
+    @FXML private Button contactInfo1;
+    @FXML private Button projDescBenefits;
+    @FXML private Button suppliesCosts;
+    @FXML private Button logisticsSafety;
+    @FXML private Button projectNotes;
 
     /**
-     * Runs automatically when the FXML finishes loading. Fills in the title and
-     * the progress blocks for the project the user opened.
+     * Runs automatically when the FXML finishes loading. Shows the project name,
+     * the overall Proposal progress, and the progress of each task button.
      */
     @FXML
     public void initialize() {
-        // The user is looking at the whole project, so no stage or task is open
-        currentStage = null;
+        currentStage = currentProject.getStage(PROPOSAL);
         currentTask = null;
 
-        titleLabel.setText(currentProject.getTitle());
-        refreshStageBlocks(PROPOSAL_ID, proposalBlocks);
-        refreshStageBlocks(PRE_PROJECT_ID, preProjectBlocks);
-        refreshStageBlocks(POST_PROJECT_ID, postProjectBlocks);
-    }
+        nameOfProject.setText(currentProject.getTitle());
+        proposalProgress.setProgress(currentStage.getProgressPercent() / 100.0);
 
-    /**
-     * Called when the user clicks the Proposal stage. Opens its task checklist.
-     *
-     * @param event the click event from the button
-     */
-    @FXML
-    public void proposalTasksButtonPressed(ActionEvent event) {
-        openStage(PROPOSAL_ID);
-    }
+        // Task id (the same as its screen's file name) and the button that opens it
+        Map<String, Button> taskButtons = new LinkedHashMap<>();
+        taskButtons.put("proposal-contact-information", contactInfo1);
+        taskButtons.put("proposal-project-description", projDescBenefits);
+        taskButtons.put("proposal-supplies-and-cost", suppliesCosts);
+        taskButtons.put("proposal-logistics-and-safety", logisticsSafety);
+        taskButtons.put("proposal-project-notes", projectNotes);
 
-    /**
-     * Called when the user clicks the Before The Project stage.
-     * DEMO ONLY: this stage is not built yet, so it shows a message.
-     * After the demo, replace the body with: openStage(PRE_PROJECT_ID);
-     *
-     * @param event the click event from the button
-     */
-    @FXML
-    public void preProjectTasksButtonPressed(ActionEvent event) {
-        showComingSoon();
-    }
-
-    /**
-     * Called when the user clicks the After The Project stage.
-     * DEMO ONLY: this stage is not built yet, so it shows a message.
-     * After the demo, replace the body with: openStage(POST_PROJECT_ID);
-     *
-     * @param event the click event from the button
-     */
-    @FXML
-    public void postProjectTasksButtonPressed(ActionEvent event) {
-        showComingSoon();
-    }
-
-    /**
-     * Called when the user clicks the edit button next to the title. Asks for a
-     * new name and renames the project.
-     *
-     * @param event the click event from the edit button
-     */
-    @FXML
-    public void editTitleButtonPressed(ActionEvent event) {
-        // Start the popup with the current title already filled in
-        TextInputDialog dialog = new TextInputDialog(currentProject.getTitle());
-        dialog.setTitle("Rename Project");
-        dialog.setHeaderText("Rename your project");
-        dialog.setContentText("Project name:");
-
-        Optional<String> result = dialog.showAndWait();
-        if (result.isEmpty()) {
-            return; // the user closed the popup, so do nothing
-        }
-
-        String newTitle = result.get().trim();
-        if (newTitle.isEmpty()) {
-            showError("Please enter a name for the project.");
-            return;
-        }
-
-        try {
-            manager.renameProject(currentProject, newTitle);
-            titleLabel.setText(currentProject.getTitle());
-        } catch (IOException e) {
-            showError("Could not rename the project.");
+        for (Map.Entry<String, Button> entry : taskButtons.entrySet()) {
+            Task task = findTask(entry.getKey());
+            if (task != null && entry.getValue().getGraphic() instanceof ProgressIndicator circle) {
+                circle.setProgress(task.getCompletionPercent() / 100.0);
+            }
         }
     }
 
+    @FXML
+    public void goToContactInfo(ActionEvent event) {
+        openTask("proposal-contact-information");
+    }
+
+    @FXML
+    public void goToProjDescBenefits(ActionEvent event) {
+        openTask("proposal-project-description");
+    }
+
+    @FXML
+    public void goToSuppliesCost(ActionEvent event) {
+        openTask("proposal-supplies-and-cost");
+    }
+
+    @FXML
+    public void goToLogisticsSafety(ActionEvent event) {
+        openTask("proposal-logistics-and-safety");
+    }
+
+    @FXML
+    public void goToProjNotes(ActionEvent event) {
+        openTask("proposal-project-notes");
+    }
+
     /**
-     * Called when the user clicks the home icon. Returns to the project list.
+     * Called when the user clicks Delete Project. Asks first, then deletes the
+     * project and returns to the home screen.
      *
-     * @param event the click event from the home icon
+     * @param event the click event
      */
+    @FXML
+    public void deleteProject(ActionEvent event) {
+        Alert confirm = new Alert(Alert.AlertType.CONFIRMATION,
+                "Delete \"" + currentProject.getTitle() + "\" and everything in it? This cannot be undone.",
+                ButtonType.YES, ButtonType.NO);
+        confirm.setTitle("Delete Project");
+        confirm.setHeaderText(null);
+        Optional<ButtonType> answer = confirm.showAndWait();
+
+        if (answer.isPresent() && answer.get() == ButtonType.YES) {
+            try {
+                manager.deleteProject(currentProject.getId());
+                switchScreen(HOME_SCREEN);
+            } catch (IOException e) {
+                showError("The project could not be deleted: " + e.getMessage());
+            }
+        }
+    }
+
+    /** Home button: returns to the project list. */
+    @FXML
     @Override
-    @FXML
     public void homeButtonPressed(ActionEvent event) {
-        switchScreen("main-view.fxml");
+        switchScreen(HOME_SCREEN);
     }
 
-    /**
-     * Called when the user clicks the back arrow. The previous screen is the
-     * project list, the same place the home icon goes.
-     *
-     * @param event the click event from the back arrow
-     */
-    @Override
+    /** Back arrow: also returns to the project list, since this is the first level below it. */
     @FXML
+    @Override
     public void backButtonPressed(ActionEvent event) {
-        switchScreen("main-view.fxml");
+        switchScreen(HOME_SCREEN);
     }
 
-    /**
-     * Remembers which stage the user picked and opens its checklist.
-     *
-     * @param stageId the id of the stage, such as "proposal"
-     */
-    private void openStage(String stageId) {
-        currentStage = currentProject.getStage(stageId);
-        if (currentStage == null) {
-            showError("Could not find that stage in this project.");
+    /** Finds one of the Proposal's tasks by its id, or null if the template does not have it. */
+    private Task findTask(String taskId) {
+        for (Task task : currentStage.getTasks()) {
+            if (task.getId().equals(taskId)) {
+                return task;
+            }
+        }
+        return null;
+    }
+
+    /** Makes a task the open one and shows its screen (the FXML file is named after the task id). */
+    private void openTask(String taskId) {
+        Task task = findTask(taskId);
+        if (task == null) {
+            showError("This task is not in the project template: " + taskId);
             return;
         }
-        switchScreen("stage-view.fxml");
-    }
-
-    /**
-     * Fills one row of progress blocks using the stage's finished and total task counts.
-     *
-     * @param stageId the id of the stage to show
-     * @param blocks  the HBox from the FXML file that holds the blocks
-     */
-    private void refreshStageBlocks(String stageId, HBox blocks) {
-        ProjectStage stage = currentProject.getStage(stageId);
-        if (stage != null) {
-            updateProgressBlocks(blocks, stage.getCompletedTaskCount(), stage.getTrackedTaskCount());
-        }
-    }
-
-    /**
-     * Tells the user a stage is not available yet (demo only).
-     */
-    private void showComingSoon() {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION,
-                "This stage is coming soon.", ButtonType.OK);
-        alert.setTitle("Top Scout");
-        alert.setHeaderText(null);
-        alert.showAndWait();
+        currentTask = task;
+        switchScreen(taskId + ".fxml");
     }
 }

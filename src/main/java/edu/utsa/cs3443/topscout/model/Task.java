@@ -51,7 +51,7 @@ public class Task {
         }
         return true;
     }
-    public int getCopletionPercentage() {
+    public int getCompletionPercent() {
         int totalFields = 0;
         int completedFields = 0;
 

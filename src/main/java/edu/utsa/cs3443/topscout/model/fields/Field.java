@@ -13,11 +13,9 @@ public class Field {
         this.required = required;
    }
 
+    /** Empties the Scout's answer. A field keeps its id, label, hint, and required flag. */
     public void clear() {
-        this.id = null;
-        this.label = null;
-        this.hint = null;
-        this.required = false;
+        // Subclasses clear their own answer. The question itself stays.
     }
 
     public boolean isFilled() {

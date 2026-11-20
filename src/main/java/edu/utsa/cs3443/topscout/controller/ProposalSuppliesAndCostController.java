@@ -4,43 +4,39 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 
 /**
- * Controls the Supplies & Cost screen (proposal-supplies-and-cost.fxml), with
- * text boxes describing the materials, supplies, tools, other needs, and
- * permits and permissions the project will require.
+ * Controls the Supplies &amp; Cost screen (proposal-supplies-and-cost.fxml):
+ * five text boxes for materials, supplies, tools, other needs, and permits.
  */
 public class ProposalSuppliesAndCostController extends TaskScreenController {
 
-    /** Linked to fx:id="materialsBox" in proposal-supplies-and-cost.fxml. */
+    /** Materials. Linked to fx:id="textEntry2". */
     @FXML
-    private TextArea materialsBox;
+    private TextArea textEntry2;
 
-    /** Linked to fx:id="suppliesBox". */
+    /** Supplies. Linked to fx:id="textEntry21". */
     @FXML
-    private TextArea suppliesBox;
+    private TextArea textEntry21;
 
-    /** Linked to fx:id="toolsBox". */
+    /** Tools. Linked to fx:id="textEntry211". */
     @FXML
-    private TextArea toolsBox;
+    private TextArea textEntry211;
 
-    /** Linked to fx:id="otherNeedsBox". */
+    /** Other needs. Linked to fx:id="textEntry2111". */
     @FXML
-    private TextArea otherNeedsBox;
+    private TextArea textEntry2111;
 
-    /** Linked to fx:id="permitsBox". */
+    /** Permits. Linked to fx:id="textEntry21111". */
     @FXML
-    private TextArea permitsBox;
+    private TextArea textEntry21111;
 
-    /**
-     * Runs automatically when the FXML finishes loading. Links each text box to
-     * its question, so the saved answers appear and are saved again when the
-     * user leaves the screen.
-     */
+    /** Runs when the FXML finishes loading. Links each box to its field. */
     @FXML
     public void initialize() {
-        bindText(materialsBox, "materials");
-        bindText(suppliesBox, "supplies");
-        bindText(toolsBox, "tools");
-        bindText(otherNeedsBox, "other-needs");
-        bindText(permitsBox, "permits");
+        showProjectName();
+        bindText(textEntry2, "materials");
+        bindText(textEntry21, "supplies");
+        bindText(textEntry211, "tools");
+        bindText(textEntry2111, "other-needs");
+        bindText(textEntry21111, "permits");
     }
 }

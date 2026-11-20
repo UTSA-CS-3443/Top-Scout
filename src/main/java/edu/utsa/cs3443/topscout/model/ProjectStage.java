@@ -27,7 +27,7 @@ public class ProjectStage {
     public int getCompletedTaskCount() {
         int count = 0;
         for (Task task : tasks) {
-            if (task.isComplete()) {
+            if (task.tracked && task.isComplete()) { // untracked tasks (notes) never count toward progress
                 count++;
             }
         }
@@ -71,5 +71,4 @@ public class ProjectStage {
                 ", tasks=" + tasks +
                 '}';
     }
-
 }

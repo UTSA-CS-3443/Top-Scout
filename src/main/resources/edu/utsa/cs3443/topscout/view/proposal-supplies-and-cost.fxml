@@ -14,13 +14,13 @@
 
 <!-- Layout for proposal-supplies-and-cost.fxml. Design this screen in Scene Builder. -->
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="494.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.topscout.controller.MainScreenController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="494.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.topscout.controller.ProposalSuppliesAndCostController">
    <children>
       <VBox alignment="CENTER" prefHeight="494.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #C6AE93;">
          <children>
             <HBox alignment="CENTER" prefHeight="78.0" prefWidth="600.0" style="-fx-background-color: #0C256D;">
                <children>
-                  <Button fx:id="home" mnemonicParsing="false" onAction="#goHome" style="-fx-background-color: rgba(0,0,0,0);">
+                  <Button fx:id="home" mnemonicParsing="false" onAction="#homeButtonPressed" style="-fx-background-color: rgba(0,0,0,0);">
                      <graphic>
                         <ImageView fitHeight="32.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -109,7 +109,7 @@
             </VBox>
             <HBox alignment="CENTER_LEFT" prefHeight="44.0" prefWidth="600.0" style="-fx-background-color: #0C256D;">
                <children>
-                  <Button fx:id="leftArrow" mnemonicParsing="false" onAction="#goBack" style="-fx-background-color: rgba(0,0,0,0);">
+                  <Button fx:id="leftArrow" mnemonicParsing="false" onAction="#backButtonPressed" style="-fx-background-color: rgba(0,0,0,0);">
                      <graphic>
                         <ImageView fitHeight="32.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                            <image>

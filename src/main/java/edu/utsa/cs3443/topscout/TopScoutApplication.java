@@ -23,13 +23,9 @@ public class TopScoutApplication extends Application {
     /** The shared stylesheet used by every screen. */
     private static final String STYLESHEET = "/edu/utsa/cs3443/topscout/css/topscout.css";
 
-    /** Starting size of the window, in pixels. */
-    private static final double WINDOW_WIDTH = 1100;
-    private static final double WINDOW_HEIGHT = 800;
-
     /**
      * Called by JavaFX once the app has launched. Builds the window and shows
-     * the home screen.
+     * the home screen. The window is as big as the screen's own layout.
      *
      * @param primaryStage the main window, created by JavaFX
      * @throws IOException if the home screen file cannot be found or loaded
@@ -40,15 +36,13 @@ public class TopScoutApplication extends Application {
         ProjectManager manager = new ProjectManager();
         BaseScreenController.initShared(primaryStage, manager);
 
-        // Load the home screen layout from its FXML file
         URL homeUrl = getClass().getResource(HOME_SCREEN);
         if (homeUrl == null) {
             throw new IOException("Could not find " + HOME_SCREEN);
         }
         Parent root = new FXMLLoader(homeUrl).load();
 
-        // Put the layout in a scene and attach the shared stylesheet
-        Scene scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT);
+        Scene scene = new Scene(root);
         URL css = getClass().getResource(STYLESHEET);
         if (css != null) {
             scene.getStylesheets().add(css.toExternalForm());

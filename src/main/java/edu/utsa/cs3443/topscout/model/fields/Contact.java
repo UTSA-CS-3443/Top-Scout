@@ -8,7 +8,7 @@ public class Contact extends Field{
 
     public Contact(String id, String label, String hint, boolean required, HashMap<String, String> contactInfo) {
         super(id, label, hint, required);
-        this.contactInfo = contactInfo;
+        this.contactInfo = (contactInfo == null) ? new HashMap<>() : contactInfo;
         implementEmptyContactInfo();
     }
 
@@ -31,8 +31,8 @@ public class Contact extends Field{
     }
     @Override 
     public boolean isFilled() {
-        return super.isFilled() && !getName().isEmpty() && !getEmail().isEmpty() && !getPhone().isEmpty() &&
-               !getStreet().isEmpty() && !getCity().isEmpty() && !getState().isEmpty() && !getZip().isEmpty();
+        // The workbook asks for as much as reasonably possible, so a name is enough to count
+        return super.isFilled() && !getName().isEmpty();
     }
 
     private void implementEmptyContactInfo() {
