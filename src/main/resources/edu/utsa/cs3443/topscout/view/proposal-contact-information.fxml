@@ -82,7 +82,7 @@
                                                             <Insets left="10.0" right="5.0" />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField HBox.hgrow="ALWAYS" maxWidth="Infinity" fx:id="ESCdob" prefHeight="28.0" prefWidth="307.0" promptText="YYYY/MM/DD" style="-fx-border-color: #ffffff;" />
+                                                      <TextField HBox.hgrow="ALWAYS" maxWidth="Infinity" fx:id="ESCdob" prefHeight="28.0" prefWidth="307.0" promptText="MM/DD/YYYY" style="-fx-border-color: #ffffff;" />
                                                    </children>
                                                 </HBox>
                                              </children>
@@ -174,7 +174,7 @@
                                                             <Insets left="10.0" right="5.0" />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField HBox.hgrow="ALWAYS" maxWidth="Infinity" fx:id="ESClbrd" prefHeight="28.0" prefWidth="233.0" promptText="YYYY/MM/DD" style="-fx-border-color: #ffffff;" />
+                                                      <TextField HBox.hgrow="ALWAYS" maxWidth="Infinity" fx:id="ESClbrd" prefHeight="28.0" prefWidth="233.0" promptText="MM/DD/YYYY" style="-fx-border-color: #ffffff;" />
                                                    </children>
                                                 </HBox>
                                              </children>
