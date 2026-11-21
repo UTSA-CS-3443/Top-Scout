@@ -141,9 +141,12 @@ public abstract class TaskScreenController extends BaseScreenController
             String text = entry.getKey().getText() == null ? "" : entry.getKey().getText().trim();
 
             if (field instanceof TextArea area) {
+                if (field instanceof Date && text.isEmpty()) {
+                    continue;
+                }
                 if (!area.setValue(text)) {
                     if (field instanceof Date) {
-                        showError("\"" + field.getLabel() + "\" must be a real date written like 03/07/2026.");
+                        showError("\"" + field.getLabel() + "\" must be a date written like 2026/03/07.");
                     } else {
                         showError("\"" + field.getLabel() + "\" has text that cannot be saved.");
                     }
