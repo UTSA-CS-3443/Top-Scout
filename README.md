@@ -1,4 +1,4 @@
-# Top-Scout
+# ![Top Scout](src/main/resources/edu/utsa/cs3443/topscout/images/boy_scout_logo.png) Top-Scout
 Project Repo for The Doers
 
 ## Description
