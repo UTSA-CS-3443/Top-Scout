@@ -12,7 +12,7 @@ The idea and motivation for this kind of app comes from our own teammate Simon's
 
 
 ## Video Demonstration
-["Top Scout Demo"](https://drive.google.com/file/d/1gp7wmvM8BYxGdNJVx901RJadCeNVd5Wq/view?usp=drive_link)
+[Top Scout Demo](https://drive.google.com/file/d/1gp7wmvM8BYxGdNJVx901RJadCeNVd5Wq/view?usp=drive_link)
 
 
 ## Known Issues
@@ -20,7 +20,7 @@ We found that there are no issues in Top Scout.
 
 
 ## Contributors
-["Victoria Johnson"](https://github.com/victoriamjohnson)
-["Alanis Stewart"](https://github.com/msmorissette)
-["Simon Schoppe"](https://github.com/Simon-education)
-["Izabella Belman"](https://github.com/izabellabelman)
+[Victoria Johnson](https://github.com/victoriamjohnson)
+[Alanis Stewart](https://github.com/msmorissette)
+[Simon Schoppe](https://github.com/Simon-education)
+[Izabella Belman](https://github.com/izabellabelman)
